@@ -11,7 +11,6 @@
 package com.aragon.redis.test.stream.eneity;
 
 import lombok.Data;
-import lombok.experimental.FieldNameConstants;
 
 /**
  * 〈功能简述〉<br> 
@@ -21,7 +20,6 @@ import lombok.experimental.FieldNameConstants;
  * @create 2022/11/9
  * @since 1.0.0
  */
-@FieldNameConstants
 @Data
 public class Stutends {
 

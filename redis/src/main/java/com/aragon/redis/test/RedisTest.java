@@ -12,6 +12,8 @@ package com.aragon.redis.test;
 
 import com.alibaba.fastjson.JSON;
 import com.aragon.redis.test.stream.eneity.Stutends;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -29,6 +31,7 @@ import java.util.List;
  * @create 2022/11/8
  * @since 1.0.0
  */
+@Api(value = "Redis测试类", description = "aaaa")
 @RestController
 @RequestMapping("/redis")
 public class RedisTest {
@@ -37,6 +40,7 @@ public class RedisTest {
     private RedisTemplate redisTemplate;
 
 
+    @ApiOperation("方法一")
     @PostMapping("/test")
     public String test(){
         List<Stutends> list = new ArrayList<>();
