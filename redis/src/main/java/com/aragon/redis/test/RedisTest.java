@@ -17,6 +17,7 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -60,6 +61,12 @@ public class RedisTest {
         return JSON.toJSONString(redisTemplate.opsForValue().get("stutends"));
     }
 
+    @ApiOperation("方法二")
+    @PostMapping("/test2")
+    public String test2(@RequestBody Stutends stutend){
+
+        return "666";
+    }
 
     public static void main(String[] args) {
         List<Stutends> list = new ArrayList<>();
