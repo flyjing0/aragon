@@ -29,5 +29,5 @@ spring:
 logging:
   level:
     # 默认所有都是info级别
-    root: debug
+    root: info
     com.aragon: info

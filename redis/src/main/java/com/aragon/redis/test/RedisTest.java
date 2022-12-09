@@ -14,6 +14,8 @@ import com.alibaba.fastjson.JSON;
 import com.aragon.redis.test.stream.eneity.Stutends;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -36,6 +38,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/redis")
 public class RedisTest {
+
+    Logger logger = LoggerFactory.getLogger(RedisTest.class);
 
     @Autowired
     private RedisTemplate redisTemplate;
@@ -64,7 +68,8 @@ public class RedisTest {
     @ApiOperation("方法二")
     @PostMapping("/test2")
     public String test2(@RequestBody Stutends stutend){
-
+        logger.info("Enter Function {} Param {}", Thread.currentThread().getStackTrace()[1].getMethodName(), JSON.toJSONString(stutend));
+        logger.info("Exist Function {} Param {}", Thread.currentThread().getStackTrace()[1].getMethodName(), JSON.toJSONString(stutend));
         return "666";
     }
 
