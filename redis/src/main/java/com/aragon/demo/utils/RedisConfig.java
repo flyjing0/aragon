@@ -1,4 +1,4 @@
-package com.aragon.redis.utils;
+package com.aragon.demo.utils;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;

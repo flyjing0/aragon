@@ -8,10 +8,10 @@
  * <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述
  */
-package com.aragon.redis.controller;
+package com.aragon.demo.controller;
 
 import com.alibaba.fastjson.JSON;
-import com.aragon.redis.test.stream.eneity.Stutends;
+import com.aragon.demo.test.stream.eneity.Stutends;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;

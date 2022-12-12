@@ -8,7 +8,7 @@
  * <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述
  */
-package com.aragon.redis.filter;
+package com.aragon.demo.filter;
 
 import com.alibaba.fastjson.JSON;
 import org.aspectj.lang.JoinPoint;
@@ -37,14 +37,14 @@ public class WebLogAspect {
     private static final Logger logger = LoggerFactory.getLogger(WebLogAspect.class);
 
     /** 以 controller 包下定义的所有请求为切入点 */
-    @Pointcut("execution(* com.aragon.redis.controller..*.*(..))")
+    @Pointcut("execution(* com.aragon.demo.controller..*.*(..))")
     public void webLog() {
         logger.info("========================================== Start ==========================================");
 
     }
 
     /**
-     * 在切点之前织入
+     * 在切点之前
      * @param joinPoint
      * @throws Throwable
      */
@@ -67,7 +67,7 @@ public class WebLogAspect {
         logger.info("Request Args   : {}", JSON.toJSONString(joinPoint.getArgs()));
     }
     /**
-     * 在切点之后织入
+     * 在切点之后
      * @throws Throwable
      */
     @After("webLog()")
