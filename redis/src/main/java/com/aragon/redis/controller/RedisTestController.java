@@ -8,7 +8,7 @@
  * <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述
  */
-package com.aragon.redis.test;
+package com.aragon.redis.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.aragon.redis.test.stream.eneity.Stutends;
@@ -37,9 +37,9 @@ import java.util.List;
 @Api(value = "Redis测试类", description = "aaaa")
 @RestController
 @RequestMapping("/redis")
-public class RedisTest {
+public class RedisTestController {
 
-    Logger logger = LoggerFactory.getLogger(RedisTest.class);
+    Logger logger = LoggerFactory.getLogger(RedisTestController.class);
 
     @Autowired
     private RedisTemplate redisTemplate;
@@ -68,8 +68,8 @@ public class RedisTest {
     @ApiOperation("方法二")
     @PostMapping("/test2")
     public String test2(@RequestBody Stutends stutend){
-        logger.info("Enter Function {} Param {}", Thread.currentThread().getStackTrace()[1].getMethodName(), JSON.toJSONString(stutend));
-        logger.info("Exist Function {} Param {}", Thread.currentThread().getStackTrace()[1].getMethodName(), JSON.toJSONString(stutend));
+        // logger.info("Enter Function {} Param {}", Thread.currentThread().getStackTrace()[1].getMethodName(), JSON.toJSONString(stutend));
+        // logger.info("Exist Function {} Param {}", Thread.currentThread().getStackTrace()[1].getMethodName(), JSON.toJSONString(stutend));
         return "666";
     }
 

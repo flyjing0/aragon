@@ -8,11 +8,10 @@
  * <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述
  */
-package com.aragon.common.filter;
+package com.aragon.redis.filter;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
@@ -26,7 +25,7 @@ import java.io.IOException;
  * @create 2022/12/7
  * @since 1.0.0
  */
-@Component
+//@Component
 public class LogFilter implements Filter{
     private static final Logger logger = LoggerFactory.getLogger(LogFilter.class);
 
