@@ -6,10 +6,10 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @EnableAspectJAutoProxy(proxyTargetClass = true)
 @SpringBootApplication
-public class RedisApplication {
+public class ErgouApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(RedisApplication.class, args);
+        SpringApplication.run(ErgouApplication.class, args);
     }
 
 }

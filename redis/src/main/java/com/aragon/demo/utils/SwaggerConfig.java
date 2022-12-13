@@ -40,7 +40,7 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
                 .apiInfo(apiInfo())
                 .select()
                 //.apis(RequestHandlerSelectors.withClassAnnotation(Api.class))//这是注意的代码
-                .apis(RequestHandlerSelectors.basePackage("com.aragon.redis"))
+                .apis(RequestHandlerSelectors.basePackage("com.aragon.demo"))
                 .paths(PathSelectors.any())
                 .build();
     }
