@@ -25,6 +25,8 @@ export default ({ mode }) => defineConfig({
   },
   base: './',
   server: {
+    port: 8099,
+    hmr:true,
     proxy: {
       '/api': {
         target: 'http://backend-api-02.newbee.ltd/manage-api/v1', // 凡是遇到 /api 路径的请求，都映射到 target 属性

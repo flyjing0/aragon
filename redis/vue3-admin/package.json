@@ -5,7 +5,7 @@
     "dev": "vite --mode development",
     "build:beta": "vite build --mode beta",
     "build:release": "vite build --mode release",
-    "serve": "vite preview"
+    "serve": "vite --mode development"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.9",

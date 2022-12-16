@@ -4,8 +4,8 @@
       <div class="head">
         <img class="logo" src="https://s.yezgea02.com/1582958061265/mlogo.png" />
         <div class="name">
-          <div class="title">新蜂商城</div>
-          <div class="tips">Vue3.0 后台管理系统</div>
+          <div class="title">东北国际医院</div>
+          <div class="tips">后台管理系统</div>
         </div>
       </div>
       <el-form label-position="top" :rules="state.rules" :model="state.ruleForm" ref="loginForm" class="login-form">
@@ -47,6 +47,7 @@ const state = reactive({
   }
 })
 const submitForm = async () => {
+
   loginForm.value.validate((valid) => {
     if (valid) {
       axios.post('/adminUser/login', {
