@@ -13,7 +13,7 @@ const name = defaultSettings.title || 'vue Element Admin' // page title
 // For example, Mac: sudo npm run
 // You can change the port by the following method:
 // port = 9527 npm run dev OR npm run dev --port = 9527
-const port = process.env.port || process.env.npm_config_port || 9527 // dev port
+const port = process.env.port || process.env.npm_config_port || 8099 // dev port
 
 // All configuration item explanations can be find in https://cli.vuejs.org/config/
 module.exports = {
@@ -30,13 +30,32 @@ module.exports = {
   lintOnSave: process.env.NODE_ENV === 'development',
   productionSourceMap: false,
   devServer: {
-    port: port,
-    open: true,
+    host: "localhost",
+    port: port, // 端口号
+    //https: false, // https:{type:Boolean}
+    open: true, //配置自动启动浏览器
+    hotOnly: true, // 热更新
     overlay: {
       warnings: false,
       errors: true
     },
-    before: require('./mock/mock-server.js')
+   // before: require('./mock/mock-server.js'),
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8088',
+        changeOrigin: true,
+        pathRewrite: {
+          "^/api": ""
+        }
+      },
+      "/dev-api": {
+        target: 'http://localhost:8088',
+        changeOrigin: true,
+        pathRewrite: {
+          "^/dev-api": ""
+        }
+      }
+    }
   },
   configureWebpack: {
     // provide the app's title in webpack's name field, so that

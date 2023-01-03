@@ -33,7 +33,7 @@ import java.util.Map;
  */
 @Api(value = "二狗测试类", description = "ergou")
 @RestController
-@RequestMapping("/ergou")
+@RequestMapping("/user")
 @MapperScan("com.aragon.demo.mapper")
 public class LoginController {
 
@@ -42,30 +42,38 @@ public class LoginController {
 
     @ApiOperation("登录")
     @PostMapping("/login")
-    public Map<String, Object> login(@RequestBody LoginDto loginDto){
+    public Result login(@RequestBody LoginDto loginDto){
         Map<String, Object> map = new HashMap<>();
         Result result = new Result();
         if(null != loginDto){
             result = loginService.login(loginDto);
         }else{
-                result.setResultCode(500);
+                result.setCode(50008);
                 result.setMessage("FAIL");
                 result.setData("登录失败");
         }
-        map.put("data", result);
-        map.put("resultCode", 200);
-        map.put("message", "sa1234");
-        Map<String, Object> map2 = new HashMap<>();
-        map2.put("data", map);
-        return map2;
+        return result;
     }
 
     @ApiOperation("获取用户信息")
-    @GetMapping("/profile")
-    public User profile(){
-        Map<String, Object> map = new HashMap<>();
+    @GetMapping("/info")
+    public Result profile(){
+        Result result = new Result();
         User user = loginService.profile();
-        return user;
+        result.setCode(20000);
+        result.setMessage("SUCCESS");
+        result.setData(user);
+        return result;
     }
 
+
+    @ApiOperation("登出")
+    @PostMapping("/logout")
+    public Result logout(){
+        Result result = new Result();
+        result.setCode(20000);
+        result.setMessage("登出成功");
+        result.setData("success");
+        return result;
+    }
 }

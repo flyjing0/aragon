@@ -26,10 +26,10 @@ public class User {
     private Long id;
     private String username;
     private String password;
-    private String nickname;
+    private String name;
     private Integer age;
     private String sex;
     private String address;
-    private String role;
+    private String roles;
 
 }

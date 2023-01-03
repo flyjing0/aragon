@@ -38,19 +38,19 @@ public class LoginServiceImpl implements LoginService {
         Result result = new Result();
         User user = new User();
         QueryWrapper<User> qw = new QueryWrapper<>();
-        qw.eq("username", loginDto.getUserName());
+        qw.eq("username", loginDto.getUsername());
         user = userMapper.selectOne(qw);
         if(null == user){
-            result.setResultCode(500);
+            result.setCode(50008);
             result.setMessage("SUCCESS");
             result.setData("用户名不存在！");
         }else{
-            if(loginDto.getPasswordMd5().equals(user.getPassword())){
-                result.setResultCode(200);
+            if(loginDto.getPassword().equals(user.getPassword())){
+                result.setCode(20000);
                 result.setMessage("SUCCESS");
                 result.setData("登录成功！");
             }else{
-                result.setResultCode(500);
+                result.setCode(50008);
                 result.setMessage("SUCCESS");
                 result.setData("用户名或密码错误！");
             }

@@ -23,9 +23,9 @@ import lombok.Data;
 @Data
 public class Result {
 
-    private Integer resultCode;
+    private Integer code;
 
     private String message;
 
-    private String data;
+    private Object data;
 }

@@ -23,8 +23,8 @@ import lombok.Data;
 @Data
 public class LoginDto {
 
-    private String userName;
+    private String username;
 
-    private String passwordMd5;
+    private String password;
 
 }
