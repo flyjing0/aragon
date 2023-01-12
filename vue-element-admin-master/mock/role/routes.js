@@ -41,7 +41,7 @@ const constantRoutes = [
         path: 'dashboard',
         component: 'views/dashboard/index',
         name: 'Dashboard',
-        meta: { title: 'Dashboard', icon: 'dashboard', affix: true }
+        meta: { title: '首页', icon: 'dashboard', affix: true }
       }
     ]
   },
@@ -53,7 +53,7 @@ const constantRoutes = [
         path: 'index',
         component: 'views/documentation/index',
         name: 'Documentation',
-        meta: { title: 'Documentation', icon: 'documentation', affix: true }
+        meta: { title: '文档', icon: 'documentation', affix: true }
       }
     ]
   },
@@ -66,7 +66,7 @@ const constantRoutes = [
         path: 'index',
         component: 'views/guide/index',
         name: 'Guide',
-        meta: { title: 'Guide', icon: 'guide', noCache: true }
+        meta: { title: '引导页', icon: 'guide', noCache: true }
       }
     ]
   }
@@ -79,7 +79,7 @@ const asyncRoutes = [
     redirect: '/permission/index',
     alwaysShow: true,
     meta: {
-      title: 'Permission',
+      title: '权限测试页',
       icon: 'lock',
       roles: ['admin', 'editor']
     },
@@ -89,7 +89,7 @@ const asyncRoutes = [
         component: 'views/permission/page',
         name: 'PagePermission',
         meta: {
-          title: 'Page Permission',
+          title: '页面权限',
           roles: ['admin']
         }
       },
@@ -98,7 +98,7 @@ const asyncRoutes = [
         component: 'views/permission/directive',
         name: 'DirectivePermission',
         meta: {
-          title: 'Directive Permission'
+          title: '指令权限'
         }
       },
       {
@@ -106,7 +106,7 @@ const asyncRoutes = [
         component: 'views/permission/role',
         name: 'RolePermission',
         meta: {
-          title: 'Role Permission',
+          title: '角色权限',
           roles: ['admin']
         }
       }
@@ -121,7 +121,7 @@ const asyncRoutes = [
         path: 'index',
         component: 'views/icons/index',
         name: 'Icons',
-        meta: { title: 'Icons', icon: 'icon', noCache: true }
+        meta: { title: '图标', icon: 'icon', noCache: true }
       }
     ]
   },
@@ -132,7 +132,7 @@ const asyncRoutes = [
     redirect: 'noRedirect',
     name: 'ComponentDemo',
     meta: {
-      title: 'Components',
+      title: '组件',
       icon: 'component'
     },
     children: [
@@ -140,7 +140,7 @@ const asyncRoutes = [
         path: 'tinymce',
         component: 'views/components-demo/tinymce',
         name: 'TinymceDemo',
-        meta: { title: 'Tinymce' }
+        meta: { title: '富文本编辑器' }
       },
       {
         path: 'markdown',
@@ -152,7 +152,7 @@ const asyncRoutes = [
         path: 'json-editor',
         component: 'views/components-demo/json-editor',
         name: 'JsonEditorDemo',
-        meta: { title: 'Json Editor' }
+        meta: { title: 'JSON 编辑器' }
       },
       {
         path: 'split-pane',
@@ -164,7 +164,7 @@ const asyncRoutes = [
         path: 'avatar-upload',
         component: 'views/components-demo/avatar-upload',
         name: 'AvatarUploadDemo',
-        meta: { title: 'Avatar Upload' }
+        meta: { title: '头像上传' }
       },
       {
         path: 'dropzone',
@@ -188,37 +188,37 @@ const asyncRoutes = [
         path: 'mixin',
         component: 'views/components-demo/mixin',
         name: 'ComponentMixinDemo',
-        meta: { title: 'componentMixin' }
+        meta: { title: '小组件' }
       },
       {
         path: 'back-to-top',
         component: 'views/components-demo/back-to-top',
         name: 'BackToTopDemo',
-        meta: { title: 'Back To Top' }
+        meta: { title: '返回顶部' }
       },
       {
         path: 'drag-dialog',
         component: 'views/components-demo/drag-dialog',
         name: 'DragDialogDemo',
-        meta: { title: 'Drag Dialog' }
+        meta: { title: '拖拽 Dialog' }
       },
       {
         path: 'drag-select',
         component: 'views/components-demo/drag-select',
         name: 'DragSelectDemo',
-        meta: { title: 'Drag Select' }
+        meta: { title: '拖拽 Select' }
       },
       {
         path: 'dnd-list',
         component: 'views/components-demo/dnd-list',
         name: 'DndListDemo',
-        meta: { title: 'Dnd List' }
+        meta: { title: '列表拖拽' }
       },
       {
         path: 'drag-kanban',
         component: 'views/components-demo/drag-kanban',
         name: 'DragKanbanDemo',
-        meta: { title: 'Drag Kanban' }
+        meta: { title: '可拖拽看板' }
       }
     ]
   },
@@ -228,7 +228,7 @@ const asyncRoutes = [
     redirect: 'noRedirect',
     name: 'Charts',
     meta: {
-      title: 'Charts',
+      title: '图表',
       icon: 'chart'
     },
     children: [
@@ -236,19 +236,19 @@ const asyncRoutes = [
         path: 'keyboard',
         component: 'views/charts/keyboard',
         name: 'KeyboardChart',
-        meta: { title: 'Keyboard Chart', noCache: true }
+        meta: { title: '键盘图表', noCache: true }
       },
       {
         path: 'line',
         component: 'views/charts/line',
         name: 'LineChart',
-        meta: { title: 'Line Chart', noCache: true }
+        meta: { title: '折线图', noCache: true }
       },
       {
         path: 'mixchart',
         component: 'views/charts/mixChart',
         name: 'MixChart',
-        meta: { title: 'Mix Chart', noCache: true }
+        meta: { title: '混合图表', noCache: true }
       }
     ]
   },
@@ -258,7 +258,7 @@ const asyncRoutes = [
     redirect: '/nested/menu1/menu1-1',
     name: 'Nested',
     meta: {
-      title: 'Nested',
+      title: '路由嵌套',
       icon: 'nested'
     },
     children: [
@@ -319,7 +319,7 @@ const asyncRoutes = [
     redirect: '/example/list',
     name: 'Example',
     meta: {
-      title: 'Example',
+      title: '综合实例',
       icon: 'example'
     },
     children: [
@@ -327,20 +327,20 @@ const asyncRoutes = [
         path: 'create',
         component: 'views/example/create',
         name: 'CreateArticle',
-        meta: { title: 'Create Article', icon: 'edit' }
+        meta: { title: '创建文章', icon: 'edit' }
       },
       {
         path: 'edit/:id(\\d+)',
         component: 'views/example/edit',
         name: 'EditArticle',
-        meta: { title: 'Edit Article', noCache: true },
+        meta: { title: '编辑文章', noCache: true },
         hidden: true
       },
       {
         path: 'list',
         component: 'views/example/list',
         name: 'ArticleList',
-        meta: { title: 'Article List', icon: 'list' }
+        meta: { title: '文章列表', icon: 'list' }
       }
     ]
   },
@@ -364,7 +364,7 @@ const asyncRoutes = [
     redirect: 'noRedirect',
     name: 'ErrorPages',
     meta: {
-      title: 'Error Pages',
+      title: '错误页面',
       icon: '404'
     },
     children: [
@@ -392,7 +392,7 @@ const asyncRoutes = [
         path: 'log',
         component: 'views/error-log/index',
         name: 'ErrorLog',
-        meta: { title: 'Error Log', icon: 'bug' }
+        meta: { title: '错误日志', icon: 'bug' }
       }
     ]
   },
@@ -411,25 +411,25 @@ const asyncRoutes = [
         path: 'export-excel',
         component: 'views/excel/export-excel',
         name: 'ExportExcel',
-        meta: { title: 'Export Excel' }
+        meta: { title: '导出 Excel' }
       },
       {
         path: 'export-selected-excel',
         component: 'views/excel/select-excel',
         name: 'SelectExcel',
-        meta: { title: 'Select Excel' }
+        meta: { title: '导出 已选择项' }
       },
       {
         path: 'export-merge-header',
         component: 'views/excel/merge-header',
         name: 'MergeHeader',
-        meta: { title: 'Merge Header' }
+        meta: { title: '导出 多级表头' }
       },
       {
         path: 'upload-excel',
         component: 'views/excel/upload-excel',
         name: 'UploadExcel',
-        meta: { title: 'Upload Excel' }
+        meta: { title: '上传 Excel' }
       }
     ]
   },
@@ -478,7 +478,7 @@ const asyncRoutes = [
         path: 'index',
         component: 'views/theme/index',
         name: 'Theme',
-        meta: { title: 'Theme', icon: 'theme' }
+        meta: { title: '换肤', icon: 'theme' }
       }
     ]
   },
@@ -505,7 +505,7 @@ const asyncRoutes = [
         path: 'index',
         component: 'views/i18n-demo/index',
         name: 'I18n',
-        meta: { title: 'I18n', icon: 'international' }
+        meta: { title: '国际化', icon: 'international' }
       }
     ]
   },

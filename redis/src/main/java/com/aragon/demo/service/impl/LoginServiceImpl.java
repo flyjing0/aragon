@@ -19,6 +19,9 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * 〈功能简述〉<br> 
  * 〈〉
@@ -47,8 +50,10 @@ public class LoginServiceImpl implements LoginService {
         }else{
             if(loginDto.getPassword().equals(user.getPassword())){
                 result.setCode(20000);
-                result.setMessage("SUCCESS");
-                result.setData("登录成功！");
+                result.setMessage("登录成功！");
+                Map<String, String> map = new HashMap<>();
+                map.put("token", "123456");
+                result.setData(map);
             }else{
                 result.setCode(50008);
                 result.setMessage("SUCCESS");
