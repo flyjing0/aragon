@@ -15,6 +15,7 @@ import com.aragon.demo.dto.Result;
 import com.aragon.demo.entity.User;
 import com.aragon.demo.mapper.UserMapper;
 import com.aragon.demo.service.LoginService;
+import com.aragon.demo.utils.JwtUtils;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -51,8 +52,13 @@ public class LoginServiceImpl implements LoginService {
             if(loginDto.getPassword().equals(user.getPassword())){
                 result.setCode(20000);
                 result.setMessage("登录成功！");
+                Map<String, String> payload = new HashMap<>();
+                payload.put("id", user.getId().toString());
+                payload.put("name", user.getUsername());
+
                 Map<String, String> map = new HashMap<>();
-                map.put("token", "123456");
+                String token = JwtUtils.getToken(payload);
+                map.put("token", token);
                 result.setData(map);
             }else{
                 result.setCode(50008);

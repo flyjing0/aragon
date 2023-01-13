@@ -10,8 +10,10 @@
  */
 package com.aragon.demo.utils;
 
+import com.aragon.demo.interceptor.JWTInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -37,6 +39,7 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
     @Bean
     public Docket createRestApi() {
         return new Docket(DocumentationType.OAS_30)
+                .enable(true)
                 .apiInfo(apiInfo())
                 .select()
                 //.apis(RequestHandlerSelectors.withClassAnnotation(Api.class))//这是注意的代码
@@ -60,4 +63,15 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
         super.addResourceHandlers(registry);
     }
 
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(new JWTInterceptor())
+                .addPathPatterns("/**")
+                .excludePathPatterns("/user/login")
+                .excludePathPatterns("/user/logout")
+                .excludePathPatterns("/swagger-ui/**")
+                .excludePathPatterns("/swagger-resources/**")
+        ;
+    }
 }
