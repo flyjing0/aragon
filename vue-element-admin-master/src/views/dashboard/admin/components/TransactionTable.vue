@@ -1,16 +1,16 @@
 <template>
   <el-table :data="list" style="width: 100%;padding-top: 15px;">
-    <el-table-column label="Order_No" min-width="200">
+    <el-table-column label="订单编号" min-width="200">
       <template slot-scope="scope">
-        {{ scope.row.order_no | orderNoFilter }}
+        {{ scope.row.orderNo | orderNoFilter }}
       </template>
     </el-table-column>
-    <el-table-column label="Price" width="195" align="center">
+    <el-table-column label="价格" width="195" align="center">
       <template slot-scope="scope">
         ¥{{ scope.row.price | toThousandFilter }}
       </template>
     </el-table-column>
-    <el-table-column label="Status" width="100" align="center">
+    <el-table-column label="状态" width="100" align="center">
       <template slot-scope="{row}">
         <el-tag :type="row.status | statusFilter">
           {{ row.status }}
@@ -27,13 +27,14 @@ export default {
   filters: {
     statusFilter(status) {
       const statusMap = {
-        success: 'success',
-        pending: 'danger'
+        1: 'success',
+        2: 'danger'
       }
       return statusMap[status]
     },
     orderNoFilter(str) {
-      return str.substring(0, 30)
+      return str
+      // return str.substring(0, 30)
     }
   },
   data() {
@@ -47,7 +48,8 @@ export default {
   methods: {
     fetchData() {
       transactionList().then(response => {
-        this.list = response.data.items.slice(0, 8)
+        this.list = response.data
+        // this.list = response.data.items.slice(0, 8)
       })
     }
   }
