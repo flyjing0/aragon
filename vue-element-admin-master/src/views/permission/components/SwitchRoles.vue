@@ -19,7 +19,7 @@ export default {
     },
     switchRoles: {
       get() {
-        return this.roles[0]
+        return this.roles
       },
       set(val) {
         this.$store.dispatch('user/changeRoles', val).then(() => {

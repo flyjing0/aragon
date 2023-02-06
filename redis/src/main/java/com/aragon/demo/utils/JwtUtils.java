@@ -59,6 +59,7 @@ public class JwtUtils {
              decodedJWT = JWT.require(Algorithm.HMAC256(SECRET)).build().verify(token);
         }catch (Exception e){
             e.printStackTrace();
+            throw e;
         }
         return decodedJWT;
     }

@@ -70,6 +70,9 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
                 .addPathPatterns("/**")
                 .excludePathPatterns("/user/login")
                 .excludePathPatterns("/user/logout")
+                .excludePathPatterns("/nacos/**")
+                .excludePathPatterns("/feign/**")
+                .excludePathPatterns("/text/**")
                 .excludePathPatterns("/swagger-ui/**")
                 .excludePathPatterns("/swagger-resources/**")
         ;
