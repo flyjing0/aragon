@@ -1,0 +1,78 @@
+package com.cloud.common.utils;
+ /**
+ * Copyright (C), 2019-2022, XXX有限公司
+ * FileName: SwaggerConfig
+ * Author:   Administrator
+ * Date:     2022/12/5 17:34
+ * Description: swagger2配置类
+ * History:
+ * <author>          <time>          <version>          <desc>
+ * 作者姓名           修改时间           版本号              描述
+ */
+
+import com.cloud.common.interceptor.JWTInterceptor;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
+import springfox.documentation.builders.ApiInfoBuilder;
+import springfox.documentation.builders.PathSelectors;
+import springfox.documentation.builders.RequestHandlerSelectors;
+import springfox.documentation.service.ApiInfo;
+import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spring.web.plugins.Docket;
+
+/**
+ * 〈功能简述〉<br>
+ * 〈swagger2配置类〉
+ *
+ * @author Administrator
+ * @create 2022/12/5
+ * @since 1.0.0
+ */
+// @Configuration
+// @EnableSwagger2
+public class SwaggerConfig extends WebMvcConfigurationSupport {
+
+    @Bean
+    public Docket createRestApi() {
+        return new Docket(DocumentationType.OAS_30)
+                .enable(true)
+                .apiInfo(apiInfo())
+                .select()
+                //.apis(RequestHandlerSelectors.withClassAnnotation(Api.class))//这是注意的代码
+                .apis(RequestHandlerSelectors.basePackage("com.cloud.business"))
+                .paths(PathSelectors.any())
+                .build();
+    }
+
+    private ApiInfo apiInfo() {
+        return new ApiInfoBuilder()
+                .title("Aragon的接口文档")
+                .description("reids接口的文档")
+                .termsOfServiceUrl("http://www.xxx.com")
+                .version("1.1.0")
+                .build();
+    }
+
+    @Override
+    protected void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/swagger-ui/**").addResourceLocations("classpath:/META-INF/resources/webjars/springfox-swagger-ui/");
+        super.addResourceHandlers(registry);
+    }
+
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(new JWTInterceptor())
+                .addPathPatterns("/**")
+                .excludePathPatterns("/user/login")
+                .excludePathPatterns("/user/logout")
+                .excludePathPatterns("/nacos/**")
+                .excludePathPatterns("/feign/**")
+                .excludePathPatterns("/text/**")
+                .excludePathPatterns("/swagger-ui/**")
+                .excludePathPatterns("/swagger-resources/**")
+        ;
+    }
+}

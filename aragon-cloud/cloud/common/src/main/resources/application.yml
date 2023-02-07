@@ -1,15 +1,16 @@
 server:
-  port: 8087
+  port: 8089
   servlet:
     context-path: /aragon
+#  address: 127.0.0.1
 spring:
   application:
-    name: aragon
+    name: common
   profiles:
     active: dev
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-#    url: jdbc:mysql://120.48.75.107:3306/ergou
+    #    url: jdbc:mysql://120.48.75.107:3306/ergou
     url: jdbc:mysql://127.0.0.1:3306/ergou
     username: root
     password: 123456
@@ -40,10 +41,10 @@ spring:
         file-extension: properties
         namespace: a0511ce7-4144-4153-8195-dd14d9e859bf
   config:
-   import: nacos:aragon-${spring.profiles.active}.properties
+    import: nacos:${spring.application.name}-${spring.profiles.active}.properties
 
 logging:
   level:
     # 默认所有都是info级别
     root: info
-    com.aragon: debug
+    com.cloud: debug

@@ -1,19 +1,18 @@
-package com.aragon.demo;
+package com.cloud.common;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
-@MapperScan("com.aragon.demo.mapper")
+@MapperScan("com.cloud.common.mapper")
 @EnableAspectJAutoProxy(proxyTargetClass = true)
-@EnableFeignClients
+// @EnableFeignClients(basePackages="com.cloud.common.feign.*")
 @SpringBootApplication
-public class ErgouApplication {
+public class CommonApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ErgouApplication.class, args);
+        SpringApplication.run(CommonApplication.class, args);
     }
 
 }

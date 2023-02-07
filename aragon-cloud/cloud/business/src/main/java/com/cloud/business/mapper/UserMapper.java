@@ -1,0 +1,17 @@
+package com.cloud.business.mapper;
+
+import com.cloud.business.entity.User;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
+
+/**
+ * 〈功能简述〉<br>
+ * 〈〉
+ *
+ * @author Administrator
+ * @create 2022/12/19
+ * @since 1.0.0
+ */
+@Mapper
+public interface UserMapper extends BaseMapper<User> {
+}
