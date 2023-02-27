@@ -47,6 +47,11 @@
       <option name="url" value="http://192.168.131.211:8081/repository/hsa-neu-web-snapshots/" />
     </remote-repository>
     <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Central Repository" />
+      <option name="url" value="https://maven.aliyun.com/repository/central" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="qcloud-central" />
       <option name="name" value="qcloud mirror central" />
       <option name="url" value="http://mirrors.cloud.tencent.com/nexus/repository/maven-public/" />

@@ -1,40 +1,18 @@
-/**
- * Copyright (C), 2019-2023, XXX有限公司
- * FileName: TransactionServiceImpl
- * Author:   Administrator
- * Date:     2023/1/13 17:14
- * Description:
- * History:
- * <author>          <time>          <version>          <desc>
- * 作者姓名           修改时间           版本号              描述
- */
 package com.cloud.common.service.impl;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.cloud.common.entity.Transaction;
 import com.cloud.common.mapper.TransactionMapper;
 import com.cloud.common.service.TransactionService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 /**
- * 〈功能简述〉<br> 
- * 〈〉
- *
- * @author Administrator
- * @create 2023/1/13
- * @since 1.0.0
- */
+* @author aragon
+* @description 针对表【transaction】的数据库操作Service实现
+* @createDate 2023-02-27 09:39:52
+*/
 @Service
-public class TransactionServiceImpl implements TransactionService {
+public class TransactionServiceImpl extends ServiceImpl<TransactionMapper, Transaction>
+implements TransactionService{
 
-    @Autowired
-    private TransactionMapper mapper;
-
-    @Override
-    public List<Transaction> getList() {
-        return mapper.selectList(new QueryWrapper<>());
-    }
 }

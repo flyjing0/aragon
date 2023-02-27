@@ -10,9 +10,6 @@
  */
 package com.cloud.common.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
 /**
  * 〈功能简述〉<br>
  * 〈〉
@@ -21,8 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
  * @create 2023/2/3
  * @since 1.0.0
  */
-@RestController
-@RequestMapping("/feign")
+//@RestController
+//@RequestMapping("/feign")
 public class FeignController {
 
     // @Autowired
