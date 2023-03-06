@@ -27,6 +27,11 @@
       <option name="url" value="http://edas-public.oss-cn-hangzhou.aliyuncs.com/repository" />
     </remote-repository>
     <remote-repository>
+      <option name="id" value="nexus" />
+      <option name="name" value="204nexus" />
+      <option name="url" value="http://172.22.70.36:8081/nexus/content/groups/public/" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="central" />
       <option name="name" value="Maven Central repository" />
       <option name="url" value="https://repo1.maven.org/maven2" />
@@ -45,6 +50,11 @@
       <option name="id" value="neu-web-snapshots" />
       <option name="name" value="neu-web-snapshots" />
       <option name="url" value="http://192.168.131.211:8081/repository/hsa-neu-web-snapshots/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Central Repository" />
+      <option name="url" value="https://maven.aliyun.com/repository/central" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="qcloud-central" />

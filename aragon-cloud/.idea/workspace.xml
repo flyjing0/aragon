@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b3afb995-ef9d-4336-8ac3-3c25ffb2fac4" name="Changes" comment="Changes">
+      <change beforePath="$PROJECT_DIR$/cloud/business/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cloud/business/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloud/business/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cloud/business/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloud/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cloud/common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloud/common/src/main/java/com/cloud/common/controller/FeignController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloud/common/src/main/java/com/cloud/common/controller/FeignController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloud/common/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cloud/common/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloud/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cloud/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue-element-admin-master/vue-element-admin-master.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-element-admin-master/vue-element-admin-master.iml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/cloud/business/pom.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/cloud/common/pom.xml" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="alwaysUpdateSnapshots" value="true" />
+        <option name="localRepository" value="C:\aragon\repositoryAg" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../../tools/apache-maven-3.6.3" />
+        <option name="useMavenConfig" value="true" />
+        <option name="userSettingsFile" value="C:\aragon\tools\apache-maven-3.6.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="downloadDocsAutomatically" value="true" />
+        <option name="downloadSourcesAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="2MD9sJok6ZGxr1TqkxPzhoX8tGV" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/aragon/project/gitee/aragon/aragon-cloud/cloud/pom.xml",
+    "nodejs_interpreter_path": "C:/aragon/tools/nodejs/node",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.26206896",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "spring.configuration.checksum": "f9af966bb22471b5e5c4ab8bb2977e63"
+  }
+}]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.CommonApplication">
+    <configuration name="BusinessApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="ACTIVE_PROFILES" />
+      <module name="business" />
+      <option name="SHORTEN_COMMAND_LINE" value="MANIFEST" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.cloud.business.BusinessApplication" />
+      <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cloud.business.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommonApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <option name="ACTIVE_PROFILES" />
+      <module name="aragon" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.cloud.common.CommonApplication" />
+      <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="serve" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/../vue-element-admin-master/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="serve" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="npm.serve" />
+      <item itemvalue="Spring Boot.CommonApplication" />
+      <item itemvalue="Spring Boot.BusinessApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.BusinessApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b3afb995-ef9d-4336-8ac3-3c25ffb2fac4" name="Changes" comment="" />
+      <created>1677291491975</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1677291491975</updated>
+      <workItem from="1677291495909" duration="1614000" />
+      <workItem from="1677294968232" duration="354000" />
+      <workItem from="1677295330152" duration="307000" />
+      <workItem from="1677295645505" duration="1828000" />
+      <workItem from="1677298088093" duration="116000" />
+      <workItem from="1677298214042" duration="51000" />
+      <workItem from="1677298273141" duration="796000" />
+      <workItem from="1677299078668" duration="2421000" />
+      <workItem from="1677315761089" duration="2062000" />
+      <workItem from="1677317843908" duration="37000" />
+      <workItem from="1677317892255" duration="221000" />
+      <workItem from="1677318123691" duration="50000" />
+      <workItem from="1677318185628" duration="119000" />
+      <workItem from="1677327572211" duration="1069000" />
+      <workItem from="1677328653627" duration="1195000" />
+      <workItem from="1677388632767" duration="1492000" />
+      <workItem from="1677393399623" duration="1153000" />
+      <workItem from="1677394575337" duration="283000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
