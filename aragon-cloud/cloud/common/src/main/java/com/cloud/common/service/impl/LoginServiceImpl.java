@@ -1,7 +1,7 @@
 /**
  * Copyright (C), 2019-2022, XXX有限公司
  * FileName: LoginServiceImpl
- * Author:   Administrator
+ * Author:   王子健
  * Date:     2022/12/19 10:53
  * Description:
  * History:
@@ -27,7 +27,7 @@ import java.util.Map;
  * 〈功能简述〉<br> 
  * 〈〉
  *
- * @author Administrator
+ * @author 王子健
  * @create 2022/12/19
  * @since 1.0.0
  */
@@ -55,9 +55,8 @@ public class LoginServiceImpl implements LoginService {
                 Map<String, String> payload = new HashMap<>();
                 payload.put("id", user.getId().toString());
                 payload.put("name", user.getUsername());
-
-                Map<String, String> map = new HashMap<>();
                 String token = JwtUtils.getToken(payload);
+                Map<String, String> map = new HashMap<>();
                 map.put("token", token);
                 result.setData(map);
             }else{

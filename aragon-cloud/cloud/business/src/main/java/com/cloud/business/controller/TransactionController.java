@@ -1,7 +1,7 @@
 /**
  * Copyright (C), 2019-2023, XXX有限公司
  * FileName: TransactionController
- * Author:   Administrator
+ * Author:   王子健
  * Date:     2023/1/13 17:05
  * Description: 交易控制层
  * History:
@@ -24,7 +24,7 @@ import java.util.List;
  * 〈功能简述〉<br> 
  * 〈交易控制层〉
  *
- * @author Administrator
+ * @author 王子健
  * @create 2023/1/13
  * @since 1.0.0
  */

@@ -1,7 +1,7 @@
 /**
  * Copyright (C), 2019-2022, XXX有限公司
  * FileName: WebLogAspect
- * Author:   Administrator
+ * Author:   王子健
  * Date:     2022/12/12 11:04
  * Description: 统一请求日志
  * History:
@@ -11,11 +11,10 @@
 package com.cloud.common.filter;
 
 import com.alibaba.fastjson.JSON;
+import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -24,22 +23,22 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * 〈功能简述〉<br> 
- * 〈统一请求日志〉
+ * 〈统一打印请求日志〉
  *
- * @author Administrator
+ * @author 王子健
  * @create 2022/12/12
  * @since 1.0.0
  */
 @Aspect
+@Slf4j
 @Component
 public class WebLogAspect {
-
-    private static final Logger logger = LoggerFactory.getLogger(WebLogAspect.class);
+    
 
     /** 以 controller 包下定义的所有请求为切入点 */
     @Pointcut("execution(* com.cloud.common.controller..*.*(..))")
     public void webLog() {
-        logger.info("========================================== Start ==========================================");
+        log.info("========================================== Start ==========================================");
 
     }
 
@@ -54,17 +53,17 @@ public class WebLogAspect {
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = attributes.getRequest();
         // 打印请求相关参数
-        logger.info("========================================== Start ==========================================");
+        log.info("========================================== Start ==========================================");
         // 打印请求 url
-        logger.info("URL            : {}", request.getRequestURL().toString());
+        log.info("URL            : {}", request.getRequestURL().toString());
         // 打印 Http method
-        logger.info("HTTP Method    : {}", request.getMethod());
+        log.info("HTTP Method    : {}", request.getMethod());
         // 打印调用 controller 的全路径以及执行方法
-        logger.info("Class Method   : {}.{}", joinPoint.getSignature().getDeclaringTypeName(), joinPoint.getSignature().getName());
+        log.info("Class Method   : {}.{}", joinPoint.getSignature().getDeclaringTypeName(), joinPoint.getSignature().getName());
         // 打印请求的 IP
-        logger.info("IP             : {}", request.getRemoteAddr());
+        log.info("IP             : {}", request.getRemoteAddr());
         // 打印请求入参
-        logger.info("Request Args   : {}", JSON.toJSONString(joinPoint.getArgs()));
+        log.info("Request Args   : {}", JSON.toJSONString(joinPoint.getArgs()));
     }
     /**
      * 在切点之后
@@ -72,9 +71,7 @@ public class WebLogAspect {
      */
     @After("webLog()")
     public void doAfter() throws Throwable {
-        logger.info("=========================================== End ===========================================");
-        // 每个请求之间空一行
-        logger.info("");
+
     }
     /**
      * 环绕
@@ -87,9 +84,12 @@ public class WebLogAspect {
         long startTime = System.currentTimeMillis();
         Object result = proceedingJoinPoint.proceed();
         // 打印出参
-        logger.info("Response Args  : {}", JSON.toJSONString(result));
+        log.info("Response Args  : {}", JSON.toJSONString(result));
         // 执行耗时
-        logger.info("Time-Consuming : {} ms", System.currentTimeMillis() - startTime);
+        log.info("Time-Consuming : {} ms", System.currentTimeMillis() - startTime);
+        log.info("=========================================== End ===========================================");
+        // 每个请求之间空一行
+        log.info("");
         return result;
     }
 }

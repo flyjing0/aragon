@@ -1,7 +1,7 @@
 /**
  * Copyright (C), 2019-2022, XXX有限公司
  * FileName: ErgouController
- * Author:   Administrator
+ * Author:   王子健
  * Date:     2022/12/19 9:30
  * Description:
  * History:
@@ -14,8 +14,7 @@ import com.cloud.common.dto.LoginDto;
 import com.cloud.common.dto.Result;
 import com.cloud.common.entity.User;
 import com.cloud.common.service.LoginService;
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.tags.Tag;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,11 +25,11 @@ import java.util.Map;
  * 〈功能简述〉<br> 
  * 〈〉
  *
- * @author Administrator
+ * @author 王子健
  * @create 2022/12/19
  * @since 1.0.0
  */
-@Tag(name = "二狗测试类", description = "ergou")
+@Api(value = "测试类", tags = "登入类")
 @RestController
 @RequestMapping("/user")
 public class LoginController {
@@ -38,7 +37,6 @@ public class LoginController {
     @Autowired
     private LoginService loginService;
 
-    @Operation(summary = "登录")
     @PostMapping("/login")
     public Result login(@RequestBody LoginDto loginDto){
         Map<String, Object> map = new HashMap<>();
@@ -53,7 +51,15 @@ public class LoginController {
         return result;
     }
 
-    @Operation(summary = "获取用户信息")
+    @PostMapping("/logout")
+    public Result logout(){
+        Result result = new Result();
+        result.setCode(20000);
+        result.setMessage("登出成功");
+        result.setData("success");
+        return result;
+    }
+
     @GetMapping("/info")
     public Result profile(){
         Result result = new Result();
@@ -65,13 +71,4 @@ public class LoginController {
     }
 
 
-    @Operation(summary = "登出")
-    @PostMapping("/logout")
-    public Result logout(){
-        Result result = new Result();
-        result.setCode(20000);
-        result.setMessage("登出成功");
-        result.setData("success");
-        return result;
-    }
 }

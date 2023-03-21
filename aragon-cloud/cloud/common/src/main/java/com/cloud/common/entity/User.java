@@ -1,7 +1,7 @@
 /**
  * Copyright (C), 2019-2022, XXX有限公司
  * FileName: User
- * Author:   Administrator
+ * Author:   王子健
  * Date:     2022/12/19 14:04
  * Description:
  * History:
@@ -16,7 +16,7 @@ import lombok.Data;
  * 〈功能简述〉<br> 
  * 〈〉
  *
- * @author Administrator
+ * @author 王子健
  * @create 2022/12/19
  * @since 1.0.0
  */

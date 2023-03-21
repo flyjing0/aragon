@@ -1,7 +1,7 @@
 /**
  * Copyright (C), 2019-2023, XXX有限公司
  * FileName: TextController
- * Author:   Administrator
+ * Author:   王子健
  * Date:     2023/2/3 16:55
  * Description:
  * History:
@@ -23,7 +23,7 @@ import java.util.List;
  * 〈功能简述〉<br> 
  * 〈〉
  *
- * @author Administrator
+ * @author 王子健
  * @create 2023/2/3
  * @since 1.0.0
  */

@@ -1,7 +1,7 @@
 /**
  * Copyright (C), 2019-2022, XXX有限公司
  * FileName: stutends
- * Author:   Administrator
+ * Author:   王子健
  * Date:     2022/11/9 12:25
  * Description: 学生实体类
  * History:
@@ -16,7 +16,7 @@ import lombok.Data;
  * 〈功能简述〉<br> 
  * 〈学生实体类〉
  *
- * @author Administrator
+ * @author 王子健
  * @create 2022/11/9
  * @since 1.0.0
  */

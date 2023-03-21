@@ -1,0 +1,63 @@
+server:
+  port: 8081
+  servlet:
+    context-path: /gateway
+spring:
+  application:
+    name: gateway
+  profiles:
+    active: dev
+  config:
+    import: nacos:${spring.application.name}-${spring.profiles.active}.properties
+
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      # 路由数组：指当请求满足什么样的断言时，转发到哪个服务上
+      routes:
+        # 路由标识，要求唯一，名称任意
+        - id: gateway-provider_1
+          # 请求最终被转发到的目标地址
+          uri: http://localhost:8088
+          # 设置断言
+          predicates:
+            # Path Route Predicate Factory 断言，满足 /gateway/provider/** 路径的请求都会被路由到 http://localhost:9024 这个uri中
+            - Path=/gateway/common/**
+            # Weight Route Predicate Factory 断言，同一分组按照权重进行分配流量，这里分配了80%
+            # 第一个group1是分组名，第二个参数是权重
+            - Weight=group1, 8
+          # 配置过滤器（局部）
+          filters:
+            # StripPrefix：去除原始请求路径中的前1级路径，即/gateway
+            - StripPrefix=1
+
+        - id: gateway-provider_2
+          uri: http://localhost:8089
+          # 设置断言
+          predicates:
+            - Path=/gateway/business/**
+            # Weight Route Predicate Factory，同一分组按照权重进行分配流量，这里分配了20%
+            - Weight=group2, 8
+          # 配置过滤器（局部）
+          filters:
+            # StripPrefix：去除原始请求路径中的前1级路径，即/gateway
+            - StripPrefix=1
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        #server-addr: 120.48.75.107:8848
+        namespace: 983c226c-68ec-4c43-bbd5-ddc627085f9d
+      config:
+        server-addr: 127.0.0.1:8848
+        #server-addr: 120.48.75.107:8848
+        group: DEFAULT_GROUP
+        file-extension: properties
+        namespace: 983c226c-68ec-4c43-bbd5-ddc627085f9d
+
+logging:
+  level:
+    # 默认所有都是info级别
+    root: info
+    com.cloud: debug

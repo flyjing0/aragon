@@ -1,7 +1,7 @@
 /**
  * Copyright (C), 2019-2023, XXX有限公司
  * FileName: TextClientFallbackFactory
- * Author:   Administrator
+ * Author:   王子健
  * Date:     2023/2/3 16:10
  * Description: Feign异常回滚处理类
  * History:
@@ -10,8 +10,7 @@
  */
 package com.cloud.business.feign;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.openfeign.FallbackFactory;
 import org.springframework.stereotype.Component;
 
@@ -19,22 +18,22 @@ import org.springframework.stereotype.Component;
  * 〈功能简述〉<br> 
  * 〈Feign异常回滚处理类〉
  *
- * @author Administrator
+ * @author 王子健
  * @create 2023/2/3
  * @since 1.0.0
  */
+@Slf4j
 @Component
-public class TextClientFallbackFactory implements FallbackFactory<TextClient> {
-
-    Logger logger = LoggerFactory.getLogger(TextClientFallbackFactory.class);
+public class FeignClientFallbackFactory implements FallbackFactory<FeignClient> {
+    
 
     @Override
-    public TextClient create(Throwable cause) {
-        return new TextClient() {
+    public FeignClient create(Throwable cause) {
+        return new FeignClient() {
             @Override
             public String findUserById() {
                 // 请求失败，回退逻辑
-                logger.debug("失败啦");
+                log.debug("失败啦");
                 return null;
             }
         };

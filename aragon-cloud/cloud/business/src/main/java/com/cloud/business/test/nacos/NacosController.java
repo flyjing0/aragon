@@ -1,7 +1,7 @@
 /**
  * Copyright (C), 2019-2023, XXX有限公司
  * FileName: NacosController
- * Author:   Administrator
+ * Author:   王子健
  * Date:     2023/2/3 14:04
  * Description: nacos测试类
  * History:
@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
  * 〈功能简述〉<br> 
  * 〈nacos测试类〉
  *
- * @author Administrator
+ * @author 王子健
  * @create 2023/2/3
  * @since 1.0.0
  */

@@ -1,7 +1,7 @@
 /**
  * Copyright (C), 2019-2023, XXX有限公司
  * FileName: JWTInterceptor
- * Author:   Administrator
+ * Author:   王子健
  * Date:     2023/1/13 10:44
  * Description: JWT拦截器
  * History:
@@ -25,10 +25,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 〈功能简述〉<br> 
- * 〈JWT拦截器〉
+ * 〈JWT令牌〉<br>
+ * 〈Token校验〉
  *
- * @author Administrator
+ * @author 王子健
  * @create 2023/1/13
  * @since 1.0.0
  */
@@ -41,9 +41,11 @@ public class JWTInterceptor implements HandlerInterceptor {
                              Object handler) throws Exception {
 
         //获取请求头中的令牌
-        String token = request.getHeader("X-Token");
+        String token = request.getHeader("Authorization");
         log.info("当前token为：{}", token);
-
+        if(token.startsWith("Bearer ")){
+            token = token.replace("Bearer ", "");
+        }
         Map<String, Object> map = new HashMap<>();
         try {
             JwtUtils.verify(token);

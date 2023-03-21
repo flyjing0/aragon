@@ -1,7 +1,7 @@
 /**
  * Copyright (C), 2019-2023, XXX有限公司
  * FileName: JwtUtils
- * Author:   Administrator
+ * Author:   王子健
  * Date:     2023/1/12 14:40
  * Description:
  * History:
@@ -16,13 +16,14 @@ import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
 
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Map;
 
 /**
  * 〈功能简述〉<br> 
  * 〈〉
  *
- * @author Administrator
+ * @author 王子健
  * @create 2023/1/12
  * @since 1.0.0
  */
@@ -40,12 +41,14 @@ public class JwtUtils {
         map.forEach((k, v) -> {
             builder.withClaim(k, v);
         });
-
+        builder.withClaim("time", new Date().getTime());
         Calendar instance = Calendar.getInstance();
-        instance.add(Calendar.MINUTE, 2); //默认7天过期
-
-        builder.withExpiresAt(instance.getTime());//指定令牌的过期时间
-        String token = builder.sign(Algorithm.HMAC256(SECRET));//签名
+        //默认过期时间  1小时
+        instance.add(Calendar.HOUR, 1);
+        //指定令牌的过期时间
+        builder.withExpiresAt(instance.getTime());
+        //签名
+        String token = builder.sign(Algorithm.HMAC256(SECRET));
         return token;
     }
 
@@ -64,4 +67,18 @@ public class JwtUtils {
         return decodedJWT;
     }
 
+    public static String getTestToken() {
+        JWTCreator.Builder builder = JWT.create();
+
+        builder.withClaim("admin", "test");
+
+        Calendar instance = Calendar.getInstance();
+        //默认过期时间
+        instance.add(Calendar.DAY_OF_MONTH, 1);
+        //指定令牌的过期时间
+        builder.withExpiresAt(instance.getTime());
+        //签名
+        String token = builder.sign(Algorithm.HMAC256(SECRET));
+        return token;
+    }
 }

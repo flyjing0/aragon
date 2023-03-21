@@ -9,16 +9,16 @@ spring:
     active: dev
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-#    url: jdbc:mysql://120.48.75.107:3306/ergou
-    url: jdbc:mysql://127.0.0.1:3306/ergou
+#    url: jdbc:mysql://120.48.75.107:3306/aragon
+    url: jdbc:mysql://127.0.0.1:3306/aragon
     username: root
-    password: 123456
+    password: aragon@ky123
   redis:
     host: 127.0.0.1
     #Redis服务器连接端口
     port: 6379
     #Redis服务器连接密码（默认为空）
-    password: 123456
+    password: aragon@ky123
     #连接池最大连接数（使用负值表示没有限制）
     pool:
       max-active: 8
@@ -34,11 +34,12 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
+        namespace: 983c226c-68ec-4c43-bbd5-ddc627085f9d
       config:
         server-addr: 127.0.0.1:8848
         group: DEFAULT_GROUP
         file-extension: properties
-        namespace: a0511ce7-4144-4153-8195-dd14d9e859bf
+        namespace: 983c226c-68ec-4c43-bbd5-ddc627085f9d
   config:
    import: nacos:aragon-${spring.profiles.active}.properties
 

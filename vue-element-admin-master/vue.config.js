@@ -9,7 +9,7 @@ function resolve(dir) {
 const name = defaultSettings.title || 'vue Element Admin' // page title
 
 // If your port is set to 80,
-// use administrator privileges to execute the command line.
+// use 王子健 privileges to execute the command line.
 // For example, Mac: sudo npm run
 // You can change the port by the following method:
 // port = 9527 npm run dev OR npm run dev --port = 9527
@@ -43,6 +43,20 @@ module.exports = {
     proxy: {
       '/api': {
         target: 'http://localhost:8088',
+        changeOrigin: true,
+        pathRewrite: {
+          "^/api": ""
+        }
+      },
+      '/api/common': {
+        target: 'http://localhost:8088/common',
+        changeOrigin: true,
+        pathRewrite: {
+          "^/api": ""
+        }
+      },
+      '/api/business': {
+        target: 'http://localhost:8089/business',
         changeOrigin: true,
         pathRewrite: {
           "^/api": ""

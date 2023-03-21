@@ -1,7 +1,7 @@
 /**
  * Copyright (C), 2019-2023, XXX有限公司
  * FileName: Transaction
- * Author:   Administrator
+ * Author:   王子健
  * Date:     2023/1/13 17:09
  * Description: 交易实体类
  * History:
@@ -18,7 +18,7 @@ import java.math.BigDecimal;
  * 〈功能简述〉<br> 
  * 〈交易实体类〉
  *
- * @author Administrator
+ * @author 王子健
  * @create 2023/1/13
  * @since 1.0.0
  */

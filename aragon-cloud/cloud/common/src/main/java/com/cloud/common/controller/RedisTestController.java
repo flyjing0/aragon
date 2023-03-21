@@ -1,7 +1,7 @@
 /**
  * Copyright (C), 2019-2022, XXX有限公司
  * FileName: RedisTest
- * Author:   Administrator
+ * Author:   王子健
  * Date:     2022/11/8 12:56
  * Description:
  * History:
@@ -12,10 +12,8 @@ package com.cloud.common.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.cloud.common.test.stream.eneity.Stutends;
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.tags.Tag;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import io.swagger.annotations.Api;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,22 +28,20 @@ import java.util.List;
  * 〈功能简述〉<br> 
  * 〈〉
  *
- * @author Administrator
+ * @author 王子健
  * @create 2022/11/8
  * @since 1.0.0
  */
-@Tag(name = "Redis测试类", description = "aaaa")
+@Slf4j
 @RestController
 @RequestMapping("/redis")
+@Api(value = "测试2",tags = "redis测试类")
 public class RedisTestController {
-
-    Logger logger = LoggerFactory.getLogger(RedisTestController.class);
 
     @Autowired
     private RedisTemplate redisTemplate;
 
 
-    @Operation(summary = "方法一")
     @PostMapping("/test")
     public String test(){
         List<Stutends> list = new ArrayList<>();
@@ -65,11 +61,10 @@ public class RedisTestController {
         return JSON.toJSONString(redisTemplate.opsForValue().get("stutends"));
     }
 
-    @Operation(summary = "方法二")
     @PostMapping("/test2")
     public String test2(@RequestBody Stutends stutend){
-        // logger.info("Enter Function {} Param {}", Thread.currentThread().getStackTrace()[1].getMethodName(), JSON.toJSONString(stutend));
-        // logger.info("Exist Function {} Param {}", Thread.currentThread().getStackTrace()[1].getMethodName(), JSON.toJSONString(stutend));
+        // log.info("Enter Function {} Param {}", Thread.currentThread().getStackTrace()[1].getMethodName(), JSON.toJSONString(stutend));
+        // log.info("Exist Function {} Param {}", Thread.currentThread().getStackTrace()[1].getMethodName(), JSON.toJSONString(stutend));
         return "666";
     }
 
