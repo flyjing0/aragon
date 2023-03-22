@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
  * @create 2023/2/3
  * @since 1.0.0
  */
-@org.springframework.cloud.openfeign.FeignClient(value = "common",path = "common",
+@org.springframework.cloud.openfeign.FeignClient(value = "common",path = "",
         fallbackFactory = FeignClientFallbackFactory.class
 )
 public interface FeignClient {

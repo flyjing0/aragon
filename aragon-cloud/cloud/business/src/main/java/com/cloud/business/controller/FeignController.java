@@ -12,7 +12,7 @@ package com.cloud.business.controller;
 
 import com.cloud.business.feign.FeignClient;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -31,7 +31,7 @@ public class FeignController {
     @Autowired
     private FeignClient feignClient;
 
-    @PostMapping("/getUsername")
+    @GetMapping("/getUsername")
     public String getProductName(){
         String result = feignClient.findUserById();
         return result;

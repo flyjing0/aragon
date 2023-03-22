@@ -1,7 +1,5 @@
 server:
   port: 8089
-  servlet:
-    context-path: /business
 #  address: 127.0.0.1
 spring:
   application:
@@ -45,7 +43,7 @@ spring:
         file-extension: properties
         namespace: 983c226c-68ec-4c43-bbd5-ddc627085f9d
   config:
-    import: nacos:${spring.application.name}-${spring.profiles.active}.properties
+    import: nacos:business-${spring.profiles.active}.properties
 
 logging:
   level:

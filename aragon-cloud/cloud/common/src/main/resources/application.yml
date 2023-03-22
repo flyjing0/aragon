@@ -1,7 +1,5 @@
 server:
   port: 8088
-  servlet:
-    context-path: /common
 #  address: 127.0.0.1
 spring:
   application:
@@ -9,7 +7,7 @@ spring:
   profiles:
     active: dev
   config:
-    import: nacos:${spring.application.name}-${spring.profiles.active}.properties
+    import: nacos:common-${spring.profiles.active}.properties
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     #url: jdbc:mysql://120.48.75.107:3306/aragon
